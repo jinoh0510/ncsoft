@@ -1,0 +1,47 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-rwdImageMaps/1.6/jquery.rwdImageMaps.min.js"></script>
+<script>
+	$(document).ready(function(e) {
+		$('img[usemap]').rwdImageMaps();
+	});
+</script>
+<style>
+	.img_box{position:relative; width:960px; max-width:100%; margin:0 auto; padding:0; overflow:hidden;}
+	.img_box img{max-width:100%; border:0; padding:0; margin:0;}
+	.img_box .movie_box{position:absolute; top:33.45%; left:0; right:0; width:83%; padding:0; margin:0 auto; overflow:hidden;}
+	.img_box .movie_box a{display:none; padding:0; margin:0;}
+	.img_box .movie_box a.on{display:block;}
+	.img_box .movie_box a img{max-width:100%;}
+</style>
+<div class="img_box">
+	<img src="index.jpg" alt="" usemap="#map1" /><!-- 전체 이미지 -->
+	<map name="map1">
+		<area shape="rect" coords="497,1226,889,1304" href="https://bit.ly/2KPahx3" target="_blank"><!-- Online 1:1 직무상담회 사전신청 -->
+		<area shape="rect" coords="77,4125,457,4204" href="https://careers.ncsoft.com" target="_blank"><!-- 채용홈페이지 지원 -->
+		<area shape="rect" coords="511,4124,891,4204" href="https://bit.ly/2KPahx3" target="_blank"><!-- Online 1:1 직무상담회 사전신청 -->
+		<area shape="rect" coords="84,1913,332,2057" href="#none" class="btn_movie1"><!-- 서브 동영상 버튼1 -->
+		<area shape="rect" coords="360,1914,607,2057" href="#none" class="btn_movie2"><!-- 서브 동영상 버튼2 -->
+		<area shape="rect" coords="635,1914,883,2057" href="#none" class="btn_movie3"><!-- 서브 동영상 버튼3 -->
+	</map>
+	<div class="movie_box">
+		<a href="#none" class="img1 on"><img src="img_movie1.jpg" alt=""></a><!-- 메인 동영상 이미지1 -->
+		<a href="#none" class="img2"><img src="img_movie2.jpg" alt=""></a><!-- 메인 동영상 이미지2 -->
+		<a href="#none" class="img3"><img src="img_movie3.jpg" alt=""></a><!-- 메인 동영상 이미지3 -->
+	</div>
+</div>
+<script>
+	$(document).ready(function(){
+		$('.btn_movie1').click(function(){
+			$('.img1').addClass('on');
+			$('.img2, .img3').removeClass('on');
+		});
+		$('.btn_movie2').click(function(){
+			$('.img2').addClass('on');
+			$('.img1, .img3').removeClass('on');
+		});
+		$('.btn_movie3').click(function(){
+			$('.img3').addClass('on');
+			$('.img1, .img2').removeClass('on');
+		});
+	});
+</script>
